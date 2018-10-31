@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class InsertActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -23,6 +24,13 @@ public class InsertActivity extends AppCompatActivity implements View.OnClickLis
         editor.putString("name", ((EditText)findViewById(R.id.editTextName)).getText().toString());
         editor.putString("pass", ((EditText)findViewById(R.id.editTextPwd)).getText().toString());
         editor.putString("email", ((EditText)findViewById(R.id.editTextEmail)).getText().toString());
-        editor.commit();
+        if (editor.commit()){
+            Toast.makeText(this,"Saved",Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show();
+        }
+
+        setResult(RESULT_FIRST_USER);
+        finish();
     }
 }
