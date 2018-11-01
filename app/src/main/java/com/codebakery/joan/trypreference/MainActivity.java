@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // 반드시 setContentView(R.layout.activity_main) 이후에 findViewById를 하셔야 합니다
-        //안그럼 null이 떨어져요
+        // 안그럼 null이 떨어져요
         setContentView(R.layout.activity_main);
 
         //버튼 있으니까 핸들러를 달아줍니다.
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         //버튼이 두개니까 분기문으로 처리해 줍니다.
-        switch(view.getId()){
+        switch(view.getId()) {
             case R.id.buttonInsert :
                 //Intent intent = new Intent(this,InsertActivity.class) 를
                 // 하지 않고 바로 new 해줍니다.
